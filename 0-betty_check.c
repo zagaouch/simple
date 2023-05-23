@@ -1,20 +1,23 @@
 #include "shell.h"
 /**
- * betty_check - function that passes the Betty checks
+ * main - function the search a file in your all folders
  * @argc: number of argument
- * @argv[]: name of file
+ * @argv: name of file
  * Return: 0 or 1
  */
-int betty_check(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	if (argc != 1)
+	char command[100];
+
+	if (argc < 2)
 	{
-		printf("ERROR: usage ./betty %s",argv[1]);
+		printf("Usage: %s <filename>\n", argv[0]);
 		return (1);
 	}
 	else
 	{
-		system("./betty.sh argv[1]");
+		sprintf(command, "find / -name %s", argv[1]);
+		system(command);
 		return (0);
 	}
 }
