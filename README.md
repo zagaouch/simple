@@ -3,7 +3,7 @@
 
 ## Group Project <> Cohort 13
 
-### Authors 
+### Authors
 
 * YOUSSEF EL MAHMI
 * Ilyas zagaouch
@@ -25,7 +25,7 @@
 * How to suspend the execution of a process until one of its children terminates
 * What is EOF / “end-of-file”?
 
-## List of allowed functions and system calls 
+## List of allowed functions and system calls
 
 * access (man 2 access)
 * chdir (man 2 chdir)
