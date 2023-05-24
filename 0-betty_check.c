@@ -1,11 +1,11 @@
 #include "shell.h"
 /**
- * main - function the search a file in your all folders
+ * search - function the search a file in your all folders
  * @argc: number of argument
  * @argv: name of file
  * Return: 0 or 1
  */
-int main(int argc, char *argv[])
+int search(int argc, char *argv[])
 {
 	char command[100];
 

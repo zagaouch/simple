@@ -11,6 +11,7 @@ void shell_commande(char *command, char *envp[])
 	if (pid == 0)
 	{
 		char *argv[2];
+
 		argv[0] = command;
 		argv[1] = NULL;
 
@@ -26,7 +27,10 @@ void shell_commande(char *command, char *envp[])
 		exit(EXIT_FAILURE);
 	}
 }
-
+/**
+ * main - check the commande line and execute
+ * Return: 0
+ */
 int main(void)
 {
 	char command[MAX_COMMAND_LENGTH];
