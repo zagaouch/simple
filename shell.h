@@ -14,5 +14,5 @@
 
 #define MAX_COMMAND_LENGTH 100
 /* fucntion liste */
-void shell_commande(char *command);
+void shell_commande(char *command, char *envp[]);
 #endif
