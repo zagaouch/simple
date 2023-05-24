@@ -11,7 +11,6 @@ void shell_commande(char *command, char *envp[])
 	if (pid == 0)
 	{
 		char *argv[2];
-
 		argv[0] = command;
 		argv[1] = NULL;
 
@@ -20,7 +19,11 @@ void shell_commande(char *command, char *envp[])
 		exit(EXIT_FAILURE);
 	}
 	else if (pid > 0)
+	{
 		wait(NULL);
+		printf("#cisfun$ ");
+		fflush(stdout);
+	}
 	else
 	{
 		fprintf(stderr, "ERROR: Fork failed\n");
