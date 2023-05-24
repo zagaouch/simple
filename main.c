@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * main - prompt function
+ * main - execute the commende line
  * Return 0
  */
 int main(void)
