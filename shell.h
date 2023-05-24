@@ -12,5 +12,6 @@
 #include <fcntl.h>
 #include <errno.h>
 
+#define MAX_COMMAND_LENGTH 100
 
 #endif
