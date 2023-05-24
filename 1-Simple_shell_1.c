@@ -22,7 +22,7 @@ void shell_commande(char *command, char *envp[])
 	else if (pid > 0)
 	{
 		wait(NULL);
-		printf("#cisfun$ ");
+		/*printf("#cisfun$ ");*/
 		fflush(stdout);
 	}
 	else
