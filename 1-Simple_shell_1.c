@@ -32,7 +32,7 @@ int main(void)
 
 	while (1)
 	{
-		printf("$ ");
+		printf("#cisfun$ ");
 		if (fgets(command, sizeof(command), stdin) == NULL)
 		{
 			break;
