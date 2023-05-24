@@ -16,4 +16,5 @@
 /* fucntion liste */
 void shell_commande(char *command, char *envp[]);
 void shell_command(char *command, char *arguments[]);
+int main(void);
 #endif
