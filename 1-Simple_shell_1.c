@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
  * shell_commande - function Display a prompt to type a command
  * @command: the command line
@@ -32,6 +32,7 @@ int main(void)
 
 	while (1)
 	{
+		printf("$ ");
 		if (fgets(command, sizeof(command), stdin) == NULL)
 		{
 			break;
