@@ -2,15 +2,18 @@
 /**
  * shell_commande - function Display a prompt to type a command
  * @command: the command line
+ * @envp: array of environment variables passed to the program
  */
 
-void shell_commande(char *command)
+void shell_commande(char *command, char *envp[])
 {
 	pid_t pid = fork();
 
 	if (pid == 0)
 	{
-		execlp(command, command, NULL);
+		char *argv[] = {command, NULL};
+
+		execve(command, argv, envp);
 		fprintf(stderr, "Command not found: %s\n", command);
 		exit(EXIT_FAILURE);
 	}
@@ -38,8 +41,8 @@ int main(void)
 			break;
 		}
 		command[strcspn(command, "\n")] = '\0';
-		if (strcmp(command, "exit") == 0)
-			break;
+		if (strlen(command) == 0)
+			continue;
 		shell_commande(command);
 	}
 	return (0);
