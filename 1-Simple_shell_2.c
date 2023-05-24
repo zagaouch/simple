@@ -1,11 +1,11 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * shell_commande - Executes the command with arguments using execvp.
  * @command: command The command to execute
  * @argumens: arguments An array of arguments for the command
  */
-void shell_commande(char *command, char *arguments[])
+void shell_command(char *command, char *arguments[])
 {
 	pid_t pid = fork();
 
@@ -29,10 +29,9 @@ void shell_commande(char *command, char *arguments[])
  * main - execute a commnde
  * Return: 0
  */
-int main(void)
-{
+int main(void) {
 	char command[MAX_COMMAND_LENGTH];
-	char *arguments[10];
+	char *arguments[MAX_ARGUMENTS];
 	char *token;
 	int i;
 
@@ -44,6 +43,7 @@ int main(void)
 		{
 			break;
 		}
+
 		command[strcspn(command, "\n")] = '\0';
 
 		if (strlen(command) == 0)
@@ -65,5 +65,5 @@ int main(void)
 		shell_commande(arguments[0], arguments);
 	}
 
-	return (0);
+	return 0;
 }

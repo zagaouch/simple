@@ -4,43 +4,44 @@
  * @command: the command line
  * @envp: array of environment variables passed to the program
  */
-
-void shell_commande(char *command, char *envp[]) {
+void shell_commande(char *command, char *envp[])
+{
 	pid_t pid = fork();
 
-	if (pid == 0) {
-		char *argv[] = {command, NULL};
+	if (pid == 0)
+	{
+		char *argv[2];
+		argv[0] = command;
+		argv[1] = NULL;
 
 		execve(command, argv, envp);
 		fprintf(stderr, "Command not found: %s\n", command);
 		exit(EXIT_FAILURE);
-	} else if (pid > 0) {
+	}
+	else if (pid > 0)
 		wait(NULL);
-	} else {
+	else
+	{
 		fprintf(stderr, "ERROR: Fork failed\n");
 		exit(EXIT_FAILURE);
 	}
 }
 
-int main(void) {
+int main(void)
+{
 	char command[MAX_COMMAND_LENGTH];
-	char *envp[] = {NULL};
 
-	while (1) {
+	while (1)
+	{
 		printf("#cisfun$ ");
-
-		if (fgets(command, sizeof(command), stdin) == NULL) {
+		if (fgets(command, sizeof(command), stdin) == NULL)
+		{
 			break;
 		}
-
 		command[strcspn(command, "\n")] = '\0';
-
-		if (strlen(command) == 0) {
+		if (strlen(command) == 0)
 			continue;
-		}
-
-		shell_commande(command, envp);
+		shell_commande(command, NULL);
 	}
-
 	return (0);
 }

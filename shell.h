@@ -11,9 +11,9 @@
 #include <limits.h>
 #include <fcntl.h>
 #include <errno.h>
-
+#define MAX_ARGUMENTS 10
 #define MAX_COMMAND_LENGTH 100
 /* fucntion liste */
 void shell_commande(char *command, char *envp[]);
-shell_commande(char *command, char *arguments[]);
+void shell_command(char *command, char *arguments[]);
 #endif
