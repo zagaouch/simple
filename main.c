@@ -8,7 +8,7 @@ int main(void)
 {
 	char command[MAX_COMMAND_LENGTH];
 
-	printf("#cisfun$ ");
+	printf("$ ");
 	fflush(stdout);
 
 	while (fgets(command, sizeof(command), stdin))
@@ -16,12 +16,12 @@ int main(void)
 		command[strcspn(command, "\n")] = '\0';
 		if (strlen(command) == 0)
 		{
-			printf("#cisfun$ ");
+			printf("$ ");
 			fflush(stdout);
 			continue;
 		}
 		shell_commande(command, NULL);
-		printf("#cisfun$ ");
+		printf("$ ");
 		fflush(stdout);
 	}
 
