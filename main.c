@@ -24,5 +24,6 @@ int main(void)
 		printf("#cisfun$ ");
 		fflush(stdout);
 	}
-	return (0);
+
+	return 0;
 }

@@ -6,6 +6,7 @@
  */
 void shell_commande(char *command, char *envp[])
 {
+	{
 	pid_t pid = fork();
 
 	if (pid == 0)
@@ -29,5 +30,7 @@ void shell_commande(char *command, char *envp[])
 	{
 		fprintf(stderr, "ERROR: Fork failed\n");
 		exit(EXIT_FAILURE);
+	}
+
 	}
 }
